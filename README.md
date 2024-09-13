@@ -22,11 +22,36 @@ Entering the file package "catkin_ws" to run the terminal.
 . install/setup.bash   ###Refresh the setup.bash program
 ros2 run driver driver_node   ###Run the "driver_node" program in the "driver" directory
 ```
+A successful run of the programme will output the following:
+```
+[INFO] [1726209916.975046887] [driver_node]: Message 114938 published at 229.94 seconds
+[INFO] [1726209916.976991159] [driver_node]: Message 114939 published at 229.94 seconds
+[INFO] [1726209916.978973573] [driver_node]: Message 114940 published at 229.94 seconds
+[INFO] [1726209916.980566543] [driver_node]: Message 114941 published at 229.94 seconds
+[INFO] [1726209916.982991719] [driver_node]: Message 114942 published at 229.94 seconds
+[INFO] [1726209916.985506051] [driver_node]: Message 114943 published at 229.95 seconds
+[INFO] [1726209916.986861149] [driver_node]: Message 114944 published at 229.95 seconds
+[INFO] [1726209916.988563822] [driver_node]: Message 114945 published at 229.95 seconds
+```
+
 ### 2.2 Running "process_node"
 Still entering the file package "catkin_ws" to run the terminal.
 ```
 . install/setup.bash   ###Refresh the setup.bash program
 ros2 run process process_node   ###Run the "process_node" program in the "process" directory
+```
+A successful run of the programme will output the following:
+```
+[INFO] [1726209916.534923847] [process_node]: Received target message: count=114718, time=229.50
+[INFO] [1726209916.535889351] [process_node]: Sent command message: count=114718, time=229.50, control_output=(-0.01, 0.00, 0.02)
+[INFO] [1726209916.537655182] [process_node]: Received target message: count=114719, time=229.50
+[INFO] [1726209916.539268490] [process_node]: Received target message: count=114720, time=229.50
+[INFO] [1726209916.541379983] [process_node]: Received target message: count=114721, time=229.50
+[INFO] [1726209916.543175870] [process_node]: Received target message: count=114722, time=229.50
+[INFO] [1726209916.545131905] [process_node]: Received target message: count=114723, time=229.51
+[INFO] [1726209916.545516860] [process_node]: Sent command message: count=114723, time=229.51, control_output=(-0.01, 0.00, 0.02)
+[INFO] [1726209916.547349655] [process_node]: Received target message: count=114724, time=229.51
+[INFO] [1726209916.549507846] [process_node]: Received target message: count=114725, time=229.51
 ```
 
 ## 3. Observe the results of running the programme
@@ -36,6 +61,12 @@ You have to make sure that the two programmes are running when you do this.You c
 ros2 topic list
 ```
 If the topic is posted properly, you can see two topics including **"/targrt"** and **"/command"**.
+```
+/command
+/parameter_events
+/rosout
+/target
+```
 ### 3.2 Running rqt_plot
 If you want to observe an image of the programme running on the X/Y/Z axes, you can use the rqt software to draw a viewable image.
 ```
@@ -50,6 +81,8 @@ rqt_plot/command/command.y
 rqt_plot/command/command.z
 ```
 You can also add x/y/z topics to the plot at the same time and observe the graphs of all three in one image.The principle is to add each topic separately and then run all of them, so I won't go into too much detail here.
+Below is a screenshot of the results of running all the programs.
+![image](https://github.com/user-attachments/assets/ba8ae91f-7ba8-453c-b863-ee02b38dc336)
 
 ---
 If you have any questions, please feel free to comment to me or contact me at my email.([link](mc45219@um.edu.mo))
